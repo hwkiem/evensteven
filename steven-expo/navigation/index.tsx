@@ -14,8 +14,7 @@ import GroupNavigationBar from "./ListNavigation";
 
 import LinkingConfiguration from "./LinkingConfiguration";
 
-import { Header } from "../components/Themed";
-import CustomHeader from "../components/Header";
+import NavBar from "../components/NavBar";
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
@@ -41,36 +40,17 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
   return (
     <Stack.Navigator
-      headerMode="float"
+      headerMode={"screen"}
       screenOptions={{
-        header: ({ scene, previous, navigation }) => {
-          const { options } = scene.descriptor;
-          const title =
-            options.headerTitle !== undefined
-              ? options.headerTitle
-              : options.title !== undefined
-              ? options.title
-              : scene.route.name;
-
-          return <Header {...navigation} />;
+        title: "title",
+        header: () => {
+          return <NavBar />;
         },
       }}
     >
-      <Stack.Screen
-        name="Splash"
-        component={SplashScreen}
-        options={{ headerTitle: "Splash" }}
-      />
-      <Stack.Screen
-        name="Group"
-        component={GroupNavigationBar}
-        options={{ headerTitle: "Group Page" }}
-      />
-      <Stack.Screen
-        name="NotFound"
-        component={NotFoundScreen}
-        options={{ title: "Oops!" }}
-      />
+      <Stack.Screen name="Splash" component={SplashScreen} />
+      <Stack.Screen name="Group" component={GroupNavigationBar} />
+      <Stack.Screen name="NotFound" component={NotFoundScreen} />
     </Stack.Navigator>
   );
 }

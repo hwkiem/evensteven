@@ -1,5 +1,4 @@
 import * as React from "react";
-import CustomHeader from "./Header";
 import { Text as DefaultText, View as DefaultView } from "react-native";
 
 import Colors from "../constants/Colors";
@@ -49,14 +48,4 @@ export function View(props: ViewProps) {
   );
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
-}
-
-export function Header(props: HeaderProps) {
-  const { lightColor, darkColor, navigation, ...otherProps } = props;
-  const backgroundColor = useThemeColor(
-    { light: lightColor, dark: darkColor },
-    "background"
-  );
-
-  return <CustomHeader {...navigation} />;
 }

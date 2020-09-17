@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
+import NavBar from "../../components/NavBar";
 import { Text, View } from "../../components/Themed";
 
 export default function TabTwoScreen() {
@@ -11,6 +12,7 @@ export default function TabTwoScreen() {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
+      <NavBar />
     </View>
   );
 }
