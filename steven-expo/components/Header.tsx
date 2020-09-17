@@ -1,34 +1,20 @@
-import React, { Component } from "react";
-import {
-  Container,
-  Header,
-  Left,
-  Body,
-  Right,
-  Button,
-  Icon,
-  Title,
-} from "native-base";
-export default class HeaderIconExample extends Component {
-  render() {
-    return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name="arrow-back" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Steven</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Right>
-        </Header>
-      </Container>
-    );
-  }
-}
+import * as React from "react";
+import { Appbar } from "react-native-paper";
+import { StyleSheet } from "react-native";
+import { StackNavigationProp } from "@react-navigation/stack";
+
+const CustomHeader = (
+  navigation: StackNavigationProp<Record<string, object | undefined>, string>
+) => (
+  <Appbar>
+    <Appbar.Action icon="archive" onPress={navigation.goBack} />
+    <Appbar.Action icon="mail" onPress={() => console.log("Pressed mail")} />
+    <Appbar.Action icon="label" onPress={() => console.log("Pressed label")} />
+    <Appbar.Action
+      icon="delete"
+      onPress={() => console.log("Pressed delete")}
+    />
+  </Appbar>
+);
+
+export default CustomHeader;

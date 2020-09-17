@@ -1,20 +1,31 @@
 import { ParamListBase } from "@react-navigation/native";
 
 export type RootStackParamList = {
-  Root: undefined;
+  Splash: undefined;
+  Group:
+    | {
+        options: {
+          headerTitle: string;
+        };
+      }
+    | undefined;
   NotFound: undefined;
 };
 
-export type TabOneParamList = {
-  TabOneScreen: undefined;
+export type SharedTabParamList = {
+  SharedTabScreen: undefined;
 };
 
-export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+export type PersonalTabParamList = {
+  PersonalTabScreen: undefined;
+};
+
+export type PantryTabParamList = {
+  PantryTabScreen: undefined;
 };
 
 export type MaterialTopTabParamList = {
-  Groups: undefined;
+  Shared: undefined;
   Personal: undefined;
   Pantry: undefined;
 };

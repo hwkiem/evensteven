@@ -4,20 +4,26 @@ export default {
   prefixes: [Linking.makeUrl("/")],
   config: {
     screens: {
-      Root: {
+      Group: {
         screens: {
-          TabOne: {
+          SharedTab: {
             screens: {
-              TabOneScreen: "one",
+              Shared: "Shared",
             },
           },
-          TabTwo: {
+          PersonalTab: {
             screens: {
-              TabTwoScreen: "two",
+              Personal: "Personal",
+            },
+          },
+          PantryTab: {
+            screens: {
+              Personal: "Pantry",
             },
           },
         },
       },
+      Splash: "/",
       NotFound: "*",
     },
   },
